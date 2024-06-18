@@ -13,9 +13,7 @@
 | first_name         | string  | null: false |
 | last_name_kana     | string  | null: false |
 | first_name_kana    | string  | null: false |
-| birth_year_id      | integer | null: false |
-| birth_month_id     | integer | null: false |
-| birth_day_id       | integer | null: false |
+| birthday           | date    | null: false |
 
 ### Association
 - has_many :items
@@ -66,7 +64,7 @@
 | ------------------ | ------     | ----------- |
 | order              | references | null: false, foreign_key: true |
 | postal_code        | string     | null: false |
-| prefecture_id      | string     | null: false |
+| prefecture_id      | integer    | null: false |
 | city               | string     | null: false |
 | street_address     | string     | null: false |
 | building           | string     |             |
