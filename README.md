@@ -29,16 +29,22 @@
 | user               | references | null: false, foreign_key: true |
 | title              | string     | null: false |
 | description        | text       | null: false |
-| category           | string     | null: false |
-| condition          | string     | null: false |
-| shipping_fee       | string     | null: false |
-| shipping_from      | string     | null: false |
-| shipping_days      | string     | null: false |
+| category_id        | integer    | null: false |
+| condition_id       | integer    | null: false |
+| shipping_fee_id    | integer    | null: false |
+| prefecture_id      | integer    | null: false |
+| shipping_day_id    | integer    | null: false |
 | price              | integer    | null: false |
 
 ### Association
 - belongs_to :user
 - has_one :order
+
+- belongs_to :category
+- belongs_to :condition
+- belongs_to :shipping_fee
+- belongs_to :prefecture
+- belongs_to :shipping_day
 
 
 ## orders テーブル
@@ -60,7 +66,7 @@
 | ------------------ | ------     | ----------- |
 | order              | references | null: false, foreign_key: true |
 | postal_code        | string     | null: false |
-| prefecture         | string     | null: false |
+| prefecture_id      | string     | null: false |
 | city               | string     | null: false |
 | street_address     | string     | null: false |
 | building           | string     |             |
