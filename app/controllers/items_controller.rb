@@ -47,15 +47,15 @@ class ItemsController < ApplicationController
   end
 
   def ensure_user_owns_item
-    unless current_user == @item.user
-      redirect_to root_path
-    end
+    return if current_user == @item.user
+
+    redirect_to root_path
   end
 
   def check_item_sold
-    if @item.order.present?
-      redirect_to root_path
-    end
+    return unless @item.order.present?
+
+    redirect_to root_path
   end
 
   def item_params
